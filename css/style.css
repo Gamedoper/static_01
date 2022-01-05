@@ -1,0 +1,212 @@
+/* navbar */
+
+.sidebar {
+  width: 8rem;
+  height: 100%;
+  background: rgb(238, 174, 202);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 81, 121, 1) 1%,
+    rgba(0, 212, 255, 1) 72%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  z-index: 10;
+}
+
+.menu-icon {
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.line {
+  width: 2.5rem;
+  height: 0.2rem;
+  background: #eee;
+  margin: 0.5rem 0;
+}
+
+.line-1,
+.line-3 {
+  width: 1.25rem;
+  transition: all 0.4s;
+}
+
+.menu-icon:hover .line {
+  width: 2.5rem;
+}
+
+.social-icon-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-link {
+  color: black;
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: purple;
+}
+
+.year {
+  margin-bottom: 1rem;
+  font: 1.5rem;
+  color: indigo;
+}
+
+/* navifation */
+
+.navigation {
+  margin-left: 8rem;
+  position: fixed;
+  left: -40rem;
+  width: 40rem;
+  height: 100%;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(../images/sidenav4.jpeg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: left 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.navigation-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  color: rgba(9, 81, 121, 1) 1%;
+  text-align: center;
+}
+
+.navigation-search-input {
+  width: 30rem;
+  background-color: rgba(0, 212, 255, 1);
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  border-radius: 10rem;
+}
+
+.navigation-search-input :focus {
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navigation-search {
+  position: relative;
+}
+
+.navigation-search-btn {
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 1.7rem;
+  position: absolute;
+  top: 0rem;
+  right: -2rem;
+}
+
+.navigation-search-btn:focus {
+  outline: none;
+}
+
+.navigation-list {
+  list-style-type: none;
+  padding: 0;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-link {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.navigation-link::before {
+  content: "";
+  width: 0rem;
+  height: 0.1rem;
+  background-color: aqua;
+  position: absolute;
+  top: 1rem;
+  left: -4rem;
+  transition: width 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.navigation-link::after {
+  content: "";
+  width: 0rem;
+  height: 0.1rem;
+  background-color: aqua;
+  position: absolute;
+  top: 1rem;
+  right: -4rem;
+  transition: width 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.navigation-list-item {
+  position: relative;
+}
+
+.nav-copyright {
+  color: white;
+}
+
+.navigation-link:hover {
+  color: aqua;
+}
+
+.navigation-link:hover::before,
+.navigation-link:hover::after {
+  width: 3rem;
+}
+
+.copyright {
+  color: antiquewhite;
+}
+
+.navbar-toggle:checked ~ .navigation {
+  left: 0rem;
+}
+
+.navbar-toggle:checked ~ .sidebar .line-1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggle:checked ~ .sidebar .line-2 {
+  opacity: 0;
+}
+
+.navbar-toggle:checked ~ .sidebar .line-3 {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
